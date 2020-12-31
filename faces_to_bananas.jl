@@ -14,7 +14,18 @@ banana = load("/home/swojcik/Downloads/Banana-Single.jpg")
 sm_banana = imresize(banana, (50, 50));
 
 
-insert_banana = function(imgtobanana, banana)
+insert_banana = function(imgtobanana, banana, faces)
+   # for every defined face, determine its size, and put an equally-sized banana on it 
+   for i in 1:length(faces)
+      top, right, bottom, left = faces[i] .+ 1
+      n_dims = size(imgtobanana[top:bottom, left:right])
+      sm_b = imresize(banana, n_dims)
+      imgtobanana[top:bottom, left:right] .= sm_b
+   end 
+   return imgtobanana
+end
+
+
 
 # for every defined face, determine its size, and put an equally-sized banana on it 
 for i in 1:length(faces)
