@@ -1,0 +1,7 @@
+name = "Reco"
+uuid = "2a7ad84f-bb1d-4f28-995c-50b88bebb371"
+authors = ["= <=>"]
+version = "0.1.0"
+
+[deps]
+PyCall = "438e738f-606a-5dbb-bf0a-cddfbfd45ab0"
